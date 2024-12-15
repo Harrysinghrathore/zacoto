@@ -1,0 +1,663 @@
+.home {
+  section {
+    display: flex;
+    flex-direction: column;
+    //margin-bottom: 4rem;
+    justify-content: center;
+  }
+
+  .about-company {
+    height: 600px;
+    background-color: var(--color-1);
+    color: var(--text-color);
+    padding-left: 125px;
+    position: relative;
+
+    h2 {
+      font-size: 72px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 27px;
+      font-weight: bold !important;
+      line-height: 1.6;
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    .book {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 238px !important; 
+      height: 75px;
+      font-size: 31px;
+      font-weight: bold;
+      border-radius: 30px;
+      background-color: #0050FF;  
+      color: #FFFFFF;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+
+    .book:hover {
+      background-color: rgb(128 167 255 / 87%);
+    }
+  }
+
+  // .services {
+  //   padding-left: 30px;
+
+  //   h2 {
+  //     font-size: 2rem;
+  //     text-align: center;
+  //     margin-bottom: 2rem;
+  //   }
+
+  //   .service-list {
+  //     display: grid;
+  //     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  //     gap: 2rem;
+
+  //     .service-item {
+  //       background-color: #f9f9f9;
+  //       padding: 1.5rem;
+  //       border-radius: 8px;
+  //       text-align: center;
+
+  //       h3 {
+  //         font-size: 1.5rem;
+  //         margin-bottom: 1rem;
+  //       }
+
+  //       p {
+  //         font-size: 1rem;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .services {
+    padding-top: 4rem;
+    position: relative;
+    padding-left: 30px;
+  
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 2rem;
+  
+      .service-item {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+  
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+  
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .circle {
+    position: absolute;
+    top: 100%;
+    right: -50%; /* Adjust this value to control the position */
+    width: 285px; /* Adjust the size of the circle */
+    height: 285px;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 255, 0.2); /* Transparent blue color */
+    transform: translateY(-50%);
+    z-index: 1; /* Place it behind other content */
+    margin-right: 10px;
+  }
+
+  .full-circle{
+    position: absolute;
+    top: 60%;
+    right: 38%;
+    width: 285px; /* Adjust the size of the circle */
+    height: 285px;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 255, 0.2); /* Transparent blue color */
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .about-company .circle {
+    right: 0; /* Position the circle on the right side of the "About Us" section */
+    bottom: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%); /* Clip the circle to the bottom right half */
+  }
+
+  .services .circle {
+    right: 0; /* Position the circle on the left side of the "Our Services" section */
+    top: 0;
+    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%); /* Clip the circle to the top right half */
+  }
+  
+
+  .previous-clients {
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .clients-carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+
+      .arrow {
+        background-color: var(--color-1);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .left-arrow {
+        left: 0;
+      }
+
+      .right-arrow {
+        right: 0;
+      }
+
+      .logos-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        justify-content: center;
+
+        .logo-item {
+          flex: 0 0 25%; /* Show 4 logos at a time */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+          box-sizing: border-box;
+
+          img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain; /* Preserve aspect ratio */
+            display: block;
+          }
+        }
+      }
+    }
+  }         
+
+  .client-map {
+    text-align: center;
+    padding-top: 4rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .map-placeholder {
+      height: 400px;
+      width: 100%;
+      background-color: #eaeaea;
+      border-radius: 8px;
+    }
+  }
+
+  .trusted-partners {
+    position: relative;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .client-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+      gap: 2rem;
+      justify-content: center; /* Center the grid */
+    }
+  
+    .logo-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+  
+      /* Add a fixed size for the logo container */
+      width: 150px; /* Set a uniform width */
+      height: 100px; /* Set a uniform height */
+    }
+  
+    .logo-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* Maintain aspect ratio while fitting in the container */
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .home {
+    .about-company {
+      padding-left: 50px;
+
+      h2 {
+        font-size: 48px;
+      }
+
+      p {
+        font-size: 22px;
+      }
+
+      .book {
+        width: 200px;
+        height: 65px;
+        font-size: 25px;
+      }
+    }
+
+    .services {
+      padding-top: 4rem;
+      padding-left: 20px;
+
+      .service-list {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .service-item h3 {
+        font-size: 1.3rem;
+      }
+
+      .service-item p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    // section {
+    //   margin-bottom: 3rem;
+    // }
+
+    .about-company {
+      padding-left: 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      .book {
+        width: 180px;
+        height: 60px;
+        font-size: 20px;
+        margin-top: 30px;
+      }
+    }
+
+    .services {
+      padding-top: 4rem;
+      padding-left: 0;
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .service-list {
+        grid-template-columns: repeat(2, 1fr);;
+        // gap: 1rem;
+      }
+
+      .service-item h3 {
+        font-size: 1.2rem;
+      }
+
+      .service-item p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .previous-clients {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .clients-carousel .arrow {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .client-map {
+      padding-top: 4rem;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .map-placeholder {
+        height: 300px;
+      }
+    }
+
+    .client-logos {
+      grid-template-columns: repeat(2, 1fr); /* 2 logos per row on smaller screens */
+    }
+
+    .logo-item {
+      width: 120px; /* Adjust the size on smaller screens */
+      height: 80px;
+    }
+
+    .trusted-partners {
+      position: relative;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .client-logos {
+        grid-template-columns: repeat(2, 1fr); /* 2 logos per row */
+        grid-template-rows: repeat(4, auto); /* 4 rows for the logos */
+        gap: 1rem; /* Adjust gap between logos if needed */
+      }
+  
+      .logo-item {
+        width: 120px; /* Adjust width for smaller screens */
+        height: 80px;  /* Adjust height for smaller screens */
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    section {
+      margin-bottom: 2rem;
+    }
+
+    .about-company {
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .book {
+        width: 150px;
+        height: 55px;
+        font-size: 18px;
+      }
+    }
+
+    .services {
+      padding-top: 4rem;
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .service-item h3 {
+        font-size: 1rem;
+      }
+
+      .service-item p {
+        font-size: 0.8rem;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+        // gap: 1rem;
+      }
+    }
+
+    .previous-clients h2 {
+      font-size: 1.6rem;
+    }
+
+    .previous-clients p {
+      font-size: 0.9rem;
+    }
+
+    .client-map {
+      padding-top: 4rem;
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .map-placeholder {
+        height: 250px;
+      }
+    }
+  }
+}
+
+.product {
+  padding: 20px 0;
+  position: relative;
+}
+
+.slider-wrap {
+  position: relative;
+  overflow: hidden !important;
+  height: 150px;
+}
+
+.slider-main {
+  display: flex;
+  position: absolute;
+  width: 200% !important;
+}
+
+.item {
+  display: flex;
+  width: auto; /* Allow width to adjust based on content */
+  height: auto; /* Allow height to adjust based on content */
+  margin: 0 12px;
+}
+
+.text {
+  height:154px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.arrow {
+  display: none; /* Hide arrows by default */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: add a background color to the arrows */
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for opacity and transform */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.product:hover .arrow {
+  display: block; /* Show arrows on hover */
+  opacity: 1; /* Fade in the arrows */
+  transform: translateY(-50%) translateX(0); /* Ensure they are centered vertically */
+}
+
+.product:hover .prev {
+  transform: translateY(-50%) translateX(-5px); /* Slightly move the left arrow to the left */
+}
+
+.product:hover .next {
+  transform: translateY(-50%) translateX(5px); /* Slightly move the right arrow to the right */
+}
+
+.ourClients{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+google-map {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #0050FF; //var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  //opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  .arrow-up {
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(-135deg);
+    color:red !important;
+  }
+
+  &:hover {
+    background-color: rgba(128, 167, 255, 0.87); /* Add a hover effect */
+  }
+}
+
+
+.client-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.map-image {
+  height: 300px;
+  width: 50%;
+}
+
+.map-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.map-text h2 {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.map-text p {
+  text-align: left;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  .map-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .map-image {
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .map-text {
+    padding-left: 0;
+  }
+
+  .map-text h2, 
+  .map-text p {
+    text-align: center;
+  }
+}
+
+

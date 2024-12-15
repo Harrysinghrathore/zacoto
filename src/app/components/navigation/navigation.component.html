@@ -1,0 +1,21 @@
+<nav>
+  <div class="container">
+    <div class="nav-brand">Company Name</div>
+    <div class="menu-icon" (click)="toggleMenu()">
+      <div [ngClass]="{'icon-active': menuActive, 'icon-inactive': !menuActive}">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+      </div>
+    </div>
+    <ul class="nav-links" [ngClass]="{'active': menuActive}">
+      <ng-container *ngFor="let page of navObj">
+        <li>
+          <div [ngClass]="{'activeClass': page.active}" (click)="navigate(page.navigateTo)">
+            {{page.page}}
+          </div>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

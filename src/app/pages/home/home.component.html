@@ -1,0 +1,102 @@
+<div class="home">
+  <section class="about-company">
+    <div class="circle"></div>
+    <h2>About Us</h2>
+    <p>We are a full-service software development company offering a wide range of solutions to meet your needs, from
+      mobile apps to complex websites and data-driven insights.</p>
+    <button class="book" (click)="navigateToContact()">
+      <p class="buttonName">Book a Call</p>
+      <span class="material-symbols-outlined arrow-icon">
+        arrow_forward
+      </span>
+    </button>
+  </section>
+
+  <section class="services">
+    <div class="circle"></div>
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>Android App <br> Development</h3>
+        <p>Creating high-performance Android applications tailored to your business needs.</p>
+      </div>
+      <div class="service-item">
+        <h3>iOS App <br> Development</h3>
+        <p>Designing and developing sleek iOS applications that offer exceptional user experiences.</p>
+      </div>
+      <div class="service-item">
+        <h3>Custom Complex WordPress Sites</h3>
+        <p>Building responsive, customizable, and complex WordPress websites using the latest technologies, tailored to enhance your online presence and meet your business needs.</p>
+      </div>
+      <div class="service-item">
+        <h3>Web Scrapers & Automation Bots</h3>
+        <p>Automating data collection and repetitive tasks with custom-built scrapers and bots.</p>
+      </div>
+      <div class="service-item">
+        <h3>Data <br> Analytics</h3>
+        <p>Leveraging data to provide actionable insights and drive business growth.</p>
+      </div>
+      <div class="service-item">
+        <h3>Other <br> Data Services</h3>
+        <p>Offering a range of data-related services including data management, processing, and visualization.</p>
+      </div>
+    </div>
+    <!-- <div class="full-circle"></div> -->
+  </section>
+
+  <!-- <section class="client-map"> -->
+    <!-- <h1>Client's Location</h1> -->
+    <!-- <google-map height="500px" width="100%" [center]="center" [zoom]="zoom" [options]="mapOptions">
+      <map-marker *ngFor="let marker of markers" (mapClick)="onMarkerClick($event)" [position]="marker.position">
+      </map-marker>
+    </google-map> -->
+  <!-- </section> -->
+
+  <section class="client-map">
+    <div class="map-container">
+      <img class="map-image" src="../../../assets/image/MAP.svg" alt="client logo">
+      <div class="map-text">
+        <h2>Global Reach</h2>
+        <p>
+          Trusted by clients worldwide, we’re proud<br>
+          to have made an impact across diverse regions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div class="ourClients">
+    <h1>Trusted Partner in Growth</h1>
+  </div> -->
+
+  <!-- <section class="product">
+    <div class="container-fluid">
+      <div class="slider-wrap">
+        <div class="slider-main">
+          <div class="item" *ngFor="let logo of clientLogos">
+            <img class="text" src="../../../assets/image/{{logo}}" alt="gi">
+          </div>
+        </div>
+        <div class="button-area">
+          <span appPrev class="arrow prev material-symbols-outlined">chevron_left</span>
+          <span appNext class="arrow next material-symbols-outlined">chevron_right</span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="trusted-partners">
+    <div class="full-circle"></div>
+    <h1>Trusted Partner in Growth</h1>
+    <div class="client-logos" style="margin-left: auto;margin-right: auto;">
+      <div class="logo-item" *ngFor="let logo of clientLogos" style="border-radius: 10px;">
+        <img src="../../../assets/image/{{logo}}" alt="client logo">
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="scroll-to-top" (click)="scrollToTop()" *ngIf="showScrollToTop">
+  <i class="arrow-up"></i>
+</div>
