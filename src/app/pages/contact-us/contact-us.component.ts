@@ -152,8 +152,17 @@ export class ContactUsComponent implements OnInit {
   }
 
   submit() {
-    console.log('hi');
-    alert('Response sent successfully. Wait to hear back from us');
+    //alert('Response sent successfully. Wait to hear back from us');
+    if (this.contactForm.valid) {
+      const hiddenForm = document.forms.namedItem('contact') as HTMLFormElement;
+      (hiddenForm.elements.namedItem('name') as HTMLInputElement).value = this.contactForm.value.fullName;
+      (hiddenForm.elements.namedItem('email') as HTMLInputElement).value = this.contactForm.value.email;
+      (hiddenForm.elements.namedItem('contactno') as HTMLInputElement).value = this.contactForm.value.contactNo;
+      (hiddenForm.elements.namedItem('websiteurl') as HTMLInputElement).value = this.contactForm.value.websiteUrl;
+      (hiddenForm.elements.namedItem('sourcemedium') as HTMLInputElement).value = this.contactForm.value.sourceMedium;
+      (hiddenForm.elements.namedItem('message') as HTMLInputElement).value = this.contactForm.value.message;
+      hiddenForm.submit();
+    }
     this.contactForm.reset();
   }
 

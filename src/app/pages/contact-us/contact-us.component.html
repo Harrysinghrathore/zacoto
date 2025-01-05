@@ -19,13 +19,13 @@
   </div>
 
   <div class="contact-form">
-    <form [formGroup]="contactForm" method="POST" data-netlify="true" >  <!--(ngSubmit)="submit()"-->
+    <form [formGroup]="contactForm" (ngSubmit)="submit()">  <!--(ngSubmit)="submit()"-->
       <label class="fieldHeader" for="name">Your Full Name</label>
-      <input class="inputBox" id="name" type="text" placeholder="" formControlName="fullName" name="name">
+      <input class="inputBox" id="name" type="text" placeholder="" formControlName="fullName">
 
       <label [ngStyle]="{ 'color' : isemailInvalid() ? 'red': '#0f1016'}" class="fieldHeader" for="email">Email*</label>
       <input [ngStyle]="{ 'border' : isemailInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
-        id="email" type="email" placeholder="" formControlName="email" name="email">
+        id="email" type="email" placeholder="" formControlName="email">
       <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
         <small *ngIf="contactForm.get('email')?.errors?.['required']" style="color:red">Email is required.</small>
         <small *ngIf="contactForm.get('email')?.errors?.['invalidEmail']" style="color:red">Please enter a valid email
@@ -35,7 +35,7 @@
       <label [ngStyle]="{ 'color' : isContactNumberInvalid() ? 'red': '#0f1016'}" class="fieldHeader"
         for="contact">Contact Number</label>
       <input [ngStyle]="{ 'border' : isContactNumberInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
-        id="phone" type="tel" placeholder="" formControlName="contactNo" name="contactNo" style="width: 103% !important">
+        id="phone" type="tel" placeholder="" formControlName="contactNo" style="width: 103% !important">
       <div *ngIf="contactForm.get('contactNo')?.invalid && contactForm.get('contactNo')?.touched">
         <small style="color:red">Contact number must be exactly 10 digits.</small>
       </div>
@@ -43,7 +43,7 @@
       <label [ngStyle]="{ 'color' : isWebsiteInvalid() ? 'red': '#0f1016'}" class="fieldHeader" for="website">Company
         Website URL*</label>
       <input [ngStyle]="{ 'border' : isWebsiteInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
-        id="website" type="url" placeholder="" formControlName="websiteUrl" name="websiteUrl">
+        id="website" type="url" placeholder="" formControlName="websiteUrl">
       <div *ngIf="contactForm.get('websiteUrl')?.invalid && contactForm.get('websiteUrl')?.touched">
         <small *ngIf="contactForm.get('websiteUrl')?.errors?.['required']" style="color:red">Website URL is
           required.</small>
@@ -55,14 +55,14 @@
       <label [ngStyle]="{ 'color' : isSourceMediumInvalid() ? 'red': '#0f1016'}" class="fieldHeader"
         for="referral">Where did you hear about us?*</label>
       <input [ngStyle]="{ 'border' : isSourceMediumInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
-        id="referral" type="text" placeholder="" formControlName="sourceMedium" name="sourceMedium">
+        id="referral" type="text" placeholder="" formControlName="sourceMedium">
       <div *ngIf="contactForm.get('sourceMedium')?.invalid && contactForm.get('sourceMedium')?.touched">
         <small style="color:red">This field is required.</small>
       </div>
 
       <label class="fieldHeader" for="message">Message</label>
       <textarea class="inputBox" style="height: 132px !important; resize: none !important;border: 2px solid black;"
-        id="message" placeholder="" formControlName="message" name="message"></textarea>
+        id="message" placeholder="" formControlName="message"></textarea>
 
       <div class="submitButton">
         <button class="submit" type="submit" [disabled]="contactForm.invalid">Send</button>
@@ -71,6 +71,22 @@
     </form>
   </div>
 </div>
+
+
+  <div [hidden]="true">
+    <form name="contact" method="POST" data-netlify="true" hidden>
+      <input type="hidden" name="form-name" value="contact"> 
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="contactno" name="contactno" />
+      <input type="websiteurl" name="websiteurl" />
+      <input type="sourcemedium" name="sourcemedium" />
+      <textarea name="message"></textarea>
+    </form>
+  </div>
+  
+
+
 
 
 <div class="scroll-to-top" (click)="scrollToTop()" *ngIf="showScrollToTop">
