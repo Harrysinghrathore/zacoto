@@ -21,7 +21,7 @@
   <div class="contact-form">
     <form [formGroup]="contactForm" method="POST" data-netlify="true" >  <!--(ngSubmit)="submit()"-->
       <label class="fieldHeader" for="name">Your Full Name</label>
-      <input class="inputBox" id="name" type="text" placeholder="" formControlName="fullName">
+      <input class="inputBox" id="name" type="text" placeholder="" formControlName="fullName" name="name">
 
       <label [ngStyle]="{ 'color' : isemailInvalid() ? 'red': '#0f1016'}" class="fieldHeader" for="email">Email*</label>
       <input [ngStyle]="{ 'border' : isemailInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
