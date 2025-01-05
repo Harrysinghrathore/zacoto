@@ -19,7 +19,7 @@
   </div>
 
   <div class="contact-form">
-    <form [formGroup]="contactForm" (ngSubmit)="submit()">  <!--(ngSubmit)="submit()"-->
+    <form [formGroup]="contactForm" (ngSubmit)="submit()"> <!--(ngSubmit)="submit()"-->
       <label class="fieldHeader" for="name">Your Full Name</label>
       <input class="inputBox" id="name" type="text" placeholder="" formControlName="fullName">
 
@@ -34,7 +34,7 @@
 
       <label [ngStyle]="{ 'color' : isContactNumberInvalid() ? 'red': '#0f1016'}" class="fieldHeader"
         for="contact">Contact Number</label>
-      <input [ngStyle]="{ 'border' : isContactNumberInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
+      <input (blur)="onPhoneInputBlur()" [ngStyle]="{ 'border' : isContactNumberInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
         id="phone" type="tel" placeholder="" formControlName="contactNo" style="width: 103% !important">
       <div *ngIf="contactForm.get('contactNo')?.invalid && contactForm.get('contactNo')?.touched">
         <small style="color:red">Contact number must be exactly 10 digits.</small>
@@ -73,21 +73,17 @@
 </div>
 
 
-  <div [hidden]="true">
-    <form name="contact" method="POST" data-netlify="true" hidden>
-      <input type="hidden" name="form-name" value="contact"> 
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="contactno" name="contactno" />
-      <input type="websiteurl" name="websiteurl" />
-      <input type="sourcemedium" name="sourcemedium" />
-      <textarea name="message"></textarea>
-    </form>
-  </div>
-  
-
-
-
+<div [hidden]="true">
+  <form name="contact" method="POST" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="contact">
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="contactno" name="contactno" />
+    <input type="websiteurl" name="websiteurl" />
+    <input type="sourcemedium" name="sourcemedium" />
+    <textarea name="message"></textarea>
+  </form>
+</div>
 
 <div class="scroll-to-top" (click)="scrollToTop()" *ngIf="showScrollToTop">
   <i class="arrow-up"></i>

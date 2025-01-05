@@ -1,7 +1,21 @@
-import { Component, HostListener, Inject, OnInit, PLATFORM_ID, } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import  intlTelInput from 'intl-tel-input';
+import intlTelInput from 'intl-tel-input';
 
 @Component({
   selector: 'app-contact-us',
@@ -14,6 +28,8 @@ export class ContactUsComponent implements OnInit {
   contactForm: FormGroup;
   isBrowser: boolean = false;
   showScrollToTop = false;
+  contactExt: any;
+  selectedCountryCode: string = '';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -25,10 +41,8 @@ export class ContactUsComponent implements OnInit {
     // Show the arrow when scrolled more than 40% of the page height
     if (currentScroll > scrollHeight * 0.4) {
       this.showScrollToTop = true;
-      console.log('hi');
     } else {
       this.showScrollToTop = false;
-      console.log('By');
     }
   }
 
@@ -58,10 +72,10 @@ export class ContactUsComponent implements OnInit {
         behavior: 'smooth',
       });
     }
-    const inputElement = document.getElementById('phone') as HTMLInputElement;
+    const inputElement = document.querySelector('#phone') as HTMLInputElement;
     if (inputElement) {
       this.loadUtilsScript().then(() => {
-        intlTelInput(inputElement, {
+        this.contactExt = intlTelInput(inputElement, {
           initialCountry: 'US',
           separateDialCode: true,
         });
@@ -72,9 +86,11 @@ export class ContactUsComponent implements OnInit {
   loadUtilsScript(): Promise<void> {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js';
+      script.src =
+        'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js';
       script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Failed to load utils.js script'));
+      script.onerror = () =>
+        reject(new Error('Failed to load utils.js script'));
       document.body.appendChild(script);
     });
   }
@@ -151,23 +167,34 @@ export class ContactUsComponent implements OnInit {
     );
   }
 
+  onPhoneInputBlur() {
+    this.selectedCountryCode =
+      this.contactExt.getSelectedCountryData().dialCode;
+  }
+
   submit() {
     //alert('Response sent successfully. Wait to hear back from us');
     if (this.contactForm.valid) {
       const hiddenForm = document.forms.namedItem('contact') as HTMLFormElement;
-      (hiddenForm.elements.namedItem('name') as HTMLInputElement).value = this.contactForm.value.fullName;
-      (hiddenForm.elements.namedItem('email') as HTMLInputElement).value = this.contactForm.value.email;
-      (hiddenForm.elements.namedItem('contactno') as HTMLInputElement).value = this.contactForm.value.contactNo;
-      (hiddenForm.elements.namedItem('websiteurl') as HTMLInputElement).value = this.contactForm.value.websiteUrl;
-      (hiddenForm.elements.namedItem('sourcemedium') as HTMLInputElement).value = this.contactForm.value.sourceMedium;
-      (hiddenForm.elements.namedItem('message') as HTMLInputElement).value = this.contactForm.value.message;
+      (hiddenForm.elements.namedItem('name') as HTMLInputElement).value =
+        this.contactForm.value.fullName;
+      (hiddenForm.elements.namedItem('email') as HTMLInputElement).value =
+        this.contactForm.value.email;
+      (hiddenForm.elements.namedItem('contactno') as HTMLInputElement).value =
+       '+' + this.selectedCountryCode + ' ' + this.contactForm.value.contactNo;
+      (hiddenForm.elements.namedItem('websiteurl') as HTMLInputElement).value =
+        this.contactForm.value.websiteUrl;
+      (
+        hiddenForm.elements.namedItem('sourcemedium') as HTMLInputElement
+      ).value = this.contactForm.value.sourceMedium;
+      (hiddenForm.elements.namedItem('message') as HTMLInputElement).value =
+        this.contactForm.value.message;
       hiddenForm.submit();
     }
     this.contactForm.reset();
   }
 
   scrollToTop(): void {
-    console.log(this.isBrowser);
     if (this.isBrowser) {
       window.scrollTo({
         top: 0,

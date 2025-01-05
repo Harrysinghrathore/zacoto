@@ -42,10 +42,8 @@ export class HomeComponent {
     // Show the arrow when scrolled more than 40% of the page height
     if (currentScroll > scrollHeight * 0.4) {
       this.showScrollToTop = true;
-      console.log('hi');
     } else {
       this.showScrollToTop = false;
-      console.log('By');
     }
   }
 
@@ -139,7 +137,6 @@ export class HomeComponent {
 
   // Function to scroll back to top
   scrollToTop(): void {
-    console.log(this.isBrowser);
     if (this.isBrowser) {
       window.scrollTo({
         top: 0,
