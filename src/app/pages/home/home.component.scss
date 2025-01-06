@@ -7,7 +7,7 @@
   }
 
   .about-company {
-    height: 600px;
+    height: 85vh;
     background-color: var(--color-1);
     color: var(--text-color);
     padding-left: 125px;
@@ -41,10 +41,32 @@
       color: #FFFFFF;
       margin-top: 50px;
       cursor: pointer;
+      border: none !important;
     }
 
     .book:hover {
       background-color: rgb(128 167 255 / 87%);
+      border: none !important;
+    }
+
+    .highlight-blue{
+      color:#0050FF;
+      font-size: 72px !important;
+    }
+
+    .highlight-white{
+      font-size: 72px !important;
+      margin-right: 20px;
+    }
+
+    h2 {
+      font-size: 72px;
+      margin-bottom: 1rem;
+      line-height: 1; 
+    }
+  
+    span {
+      display: block; 
     }
   }
 
@@ -290,6 +312,26 @@
         width: 200px;
         height: 65px;
         font-size: 25px;
+        border: none !important;
+      }
+
+      .highlight-blue{
+        color:#0050FF;
+        font-size: 48px !important;
+      }
+  
+      .highlight-white{
+        margin-right: 20px;
+        font-size: 48px !important;
+      }
+  
+      h2 {
+        margin-bottom: 1rem;
+        line-height: 1; 
+      }
+    
+      span {
+        display: block; 
       }
     }
 
@@ -339,6 +381,26 @@
         height: 60px;
         font-size: 20px;
         margin-top: 30px;
+        border: none !important;
+      }
+
+      .highlight-blue{
+        color:#0050FF;
+        font-size: 36px !important;
+      }
+  
+      .highlight-white{
+        margin-right: 20px;
+        font-size: 36px !important;
+      }
+  
+      h2 {
+        margin-bottom: 1rem;
+        line-height: 1; 
+      }
+    
+      span {
+        display: block; 
       }
     }
 
@@ -440,6 +502,30 @@
         width: 150px;
         height: 55px;
         font-size: 18px;
+        border: none !important;
+      }
+
+      .highlight-blue{
+        color:#0050FF;
+        font-size: 28px !important;
+      }
+  
+      .highlight-white{
+        margin-right: 20px;
+        font-size: 28px !important;
+      }
+  
+      h2 {
+        margin-bottom: 1rem;
+        line-height: 1; 
+      }
+    
+      span {
+        display: block; 
+      }
+
+      .limitation{
+        padding-left: 39px !important;
       }
     }
 

@@ -1,6 +1,6 @@
 <nav>
   <div class="container">
-    <div class="nav-brand">Company Name</div>
+    <img (click)="navigate('/')" class="logo nav-brand" src="../../../assets/image/logo.svg" alt="zacoto">
     <div class="menu-icon" (click)="toggleMenu()">
       <div [ngClass]="{'icon-active': menuActive, 'icon-inactive': !menuActive}">
         <span class="bar1"></span>

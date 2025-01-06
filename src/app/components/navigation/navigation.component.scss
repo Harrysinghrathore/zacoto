@@ -157,6 +157,13 @@ nav {
   }
 }
 
+.logo {
+  height: 60px;
+  width: auto;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
 /* Prevent scrolling when menu is active */
 .no-scroll {
   overflow: hidden;

@@ -41,12 +41,12 @@
       </div>
 
       <label [ngStyle]="{ 'color' : isWebsiteInvalid() ? 'red': '#0f1016'}" class="fieldHeader" for="website">Company
-        Website URL*</label>
+        Website URL</label>
       <input [ngStyle]="{ 'border' : isWebsiteInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
         id="website" type="url" placeholder="" formControlName="websiteUrl">
       <div *ngIf="contactForm.get('websiteUrl')?.invalid && contactForm.get('websiteUrl')?.touched">
-        <small *ngIf="contactForm.get('websiteUrl')?.errors?.['required']" style="color:red">Website URL is
-          required.</small>
+        <!-- <small *ngIf="contactForm.get('websiteUrl')?.errors?.['required']" style="color:red">Website URL is
+          required.</small> -->
         <small *ngIf="contactForm.get('websiteUrl')?.errors?.['invalidUrl']" style="color:red">Please enter a valid
           URL.</small>
       </div>

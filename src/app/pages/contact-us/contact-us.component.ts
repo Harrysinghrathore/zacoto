@@ -56,7 +56,6 @@ export class ContactUsComponent implements OnInit {
       ]),
       contactNo: new FormControl('', [this.contactNumberValidator()]),
       websiteUrl: new FormControl('', [
-        Validators.required,
         this.websiteUrlValidator(),
       ]),
       sourceMedium: new FormControl('', [Validators.required]),
