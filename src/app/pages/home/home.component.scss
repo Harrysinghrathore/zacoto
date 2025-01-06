@@ -321,7 +321,7 @@
       }
   
       .highlight-white{
-        margin-right: 20px;
+        margin-right: 18px !important;
         font-size: 48px !important;
       }
   
@@ -360,10 +360,6 @@
 
 @media (max-width: 768px) {
   .home {
-    // section {
-    //   margin-bottom: 3rem;
-    // }
-
     .about-company {
       padding-left: 20px;
       text-align: center;
@@ -390,7 +386,7 @@
       }
   
       .highlight-white{
-        margin-right: 20px;
+        margin-right: 16px !important;
         font-size: 36px !important;
       }
   
@@ -485,10 +481,6 @@
 
 @media (max-width: 480px) {
   .home {
-    section {
-      margin-bottom: 2rem;
-    }
-
     .about-company {
       h2 {
         font-size: 28px;
@@ -511,7 +503,7 @@
       }
   
       .highlight-white{
-        margin-right: 20px;
+        margin-right: 14px !important;
         font-size: 28px !important;
       }
   
@@ -522,10 +514,6 @@
     
       span {
         display: block; 
-      }
-
-      .limitation{
-        padding-left: 39px !important;
       }
     }
 
