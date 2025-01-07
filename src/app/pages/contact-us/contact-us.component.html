@@ -35,7 +35,7 @@
       <label [ngStyle]="{ 'color' : isContactNumberInvalid() ? 'red': '#0f1016'}" class="fieldHeader"
         for="contact">Contact Number</label>
       <input (blur)="onPhoneInputBlur()" [ngStyle]="{ 'border' : isContactNumberInvalid() ? '2px solid red': '2px solid #0f1016'}" class="inputBox"
-        id="phone" type="tel" placeholder="" formControlName="contactNo" style="width: 103% !important">
+        id="phone" type="tel" placeholder="" formControlName="contactNo" style="width: 100% !important">
       <div *ngIf="contactForm.get('contactNo')?.invalid && contactForm.get('contactNo')?.touched">
         <small style="color:red">Contact number must be exactly 10 digits.</small>
       </div>
