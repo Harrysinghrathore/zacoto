@@ -84,7 +84,7 @@ nav {
         align-items: center;
 
         &:hover {
-          border-top: 4px solid var(--accent-color);
+          border-top: 4px solid var(--hover-cololr);
           cursor: pointer;
         }
 
@@ -99,6 +99,10 @@ nav {
       .menu-icon {
         display: block;
         margin-right: 1rem; /* Add some margin to the right */
+      }
+
+      .logo {
+        margin-left: 8px !important;
       }
 
       .nav-links {
